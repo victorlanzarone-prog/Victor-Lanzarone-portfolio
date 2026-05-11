@@ -1,0 +1,37 @@
+{
+  "name": "mon-site-portfolio",
+  "version": "1.0.0",
+  "description": "Portfolio web en application de bureau Electron",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "serve": "node server.js",
+    "dist": "electron-builder",
+    "dist:mas": "electron-builder --mac mas"
+  },
+  "dependencies": {
+    "express": "^5.2.1"
+  },
+  "devDependencies": {
+    "electron": "^26.1.0",
+    "electron-builder": "^24.6.0"
+  },
+  "build": {
+    "appId": "com.votre.nomportfolio",
+    "productName": "MonSitePortfolio",
+    "mac": {
+      "category": "public.app-category.productivity",
+      "target": [
+        "dmg",
+        "mas"
+      ],
+      "hardenedRuntime": true,
+      "entitlements": "entitlements.mac.plist",
+      "entitlementsInherit": "entitlements.mac.plist"
+    },
+    "mas": {
+      "entitlements": "entitlements.mac.plist",
+      "entitlementsInherit": "entitlements.mac.plist"
+    }
+  }
+}
